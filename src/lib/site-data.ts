@@ -1,0 +1,339 @@
+export type PortfolioCategory =
+  | "Casamentos"
+  | "Festas de luxo"
+  | "Eventos corporativos"
+  | "Decorações temáticas";
+
+export interface SiteConfig {
+  name: string;
+  shortName: string;
+  tagline: string;
+  description: string;
+  url: string;
+  locale: string;
+  city: string;
+  region: string;
+  serviceArea: string[];
+  whatsappNumber: string;
+  whatsappDisplay: string;
+  whatsappBaseMessage: string;
+  leadEventTypes: string[];
+  testimonialsEnabled: boolean;
+}
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface HeroSlide {
+  title: string;
+  subtitle: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+export interface PortfolioItem {
+  slug: string;
+  title: string;
+  category: PortfolioCategory;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  palette: string[];
+  note: string;
+}
+
+export interface ServiceItem {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  description: string;
+  bullets: string[];
+  imageSrc: string;
+  imageAlt: string;
+}
+
+export interface TestimonialItem {
+  name: string;
+  role: string;
+  quote: string;
+  eventType: string;
+}
+
+export interface LeadBrief {
+  name: string;
+  phone: string;
+  eventType: string;
+  date: string;
+  guests: string;
+  message: string;
+}
+
+export const siteConfig: SiteConfig = {
+  name: "Le Jardin Eventos e Decorações",
+  shortName: "Le Jardin",
+  tagline: "Transformando sonhos em cenários inesquecíveis",
+  description:
+    "Site institucional premium da Le Jardin Eventos e Decorações, com direção estética voltada a projetos florais sofisticados, cenografia refinada e eventos de alto padrão em São José do Rio Preto.",
+  url: "https://lejardineventos.com.br",
+  locale: "pt_BR",
+  city: "São José do Rio Preto",
+  region: "SP",
+  serviceArea: [
+    "São José do Rio Preto",
+    "Noroeste Paulista",
+    "Interior de São Paulo",
+  ],
+  whatsappNumber: "5517996259177",
+  whatsappDisplay: "+55 (17) 99625-9177",
+  whatsappBaseMessage:
+    "Olá, Le Jardin. Gostaria de conversar sobre um projeto de decoração para o meu evento.",
+  leadEventTypes: [
+    "Casamento",
+    "Festa de luxo",
+    "Evento corporativo",
+    "Decoração temática",
+    "Outro projeto especial",
+  ],
+  testimonialsEnabled: false,
+};
+
+export const navigationItems: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Portfólio", href: "/portfolio" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Contato", href: "/contato" },
+];
+
+export const heroSlides: HeroSlide[] = [
+  {
+    title: "Cerimônias autorais",
+    subtitle:
+      "Floral refinado, composição aérea e presença cênica com assinatura delicada.",
+    imageSrc: "/media/hero-cerimonia.svg",
+    imageAlt:
+      "Composição abstrata que remete a uma cerimônia elegante com arranjos florais claros e iluminação dourada.",
+  },
+  {
+    title: "Recepções instagramáveis",
+    subtitle:
+      "Mesas, iluminação e texturas que criam impacto memorável do primeiro olhar ao último brinde.",
+    imageSrc: "/media/hero-recepcao.svg",
+    imageAlt:
+      "Composição abstrata inspirada em uma recepção sofisticada com dourado suave, flores e ambientação luxuosa.",
+  },
+  {
+    title: "Eventos com atmosfera",
+    subtitle:
+      "Cenários pensados para emocionar, receber e valorizar cada detalhe da experiência.",
+    imageSrc: "/media/hero-corporativo.svg",
+    imageAlt:
+      "Composição abstrata inspirada em um evento corporativo premium com luz cênica, vegetação e linhas elegantes.",
+  },
+];
+
+export const signaturePillars = [
+  {
+    title: "Luxo contemporâneo",
+    description:
+      "Misturamos linhas limpas, materiais nobres e volumetria floral para criar elegância atual e atemporal.",
+  },
+  {
+    title: "Cenografia com intenção",
+    description:
+      "Cada cenário nasce de um roteiro sensorial: circulação, luz, textura e pontos de impacto visual.",
+  },
+  {
+    title: "Curadoria artesanal",
+    description:
+      "Cores, flores, mobiliário e iluminação são escolhidos como uma direção de arte exclusiva para cada evento.",
+  },
+];
+
+export const processSteps = [
+  {
+    title: "Escuta e conceito",
+    description:
+      "Entendemos estilo, ocasião e atmosfera desejada para transformar referências em uma narrativa visual clara.",
+  },
+  {
+    title: "Projeto e composição",
+    description:
+      "Desenhamos a cenografia com foco em elegância, percurso visual, iluminação e protagonismo dos detalhes.",
+  },
+  {
+    title: "Montagem impecável",
+    description:
+      "A execução recebe acompanhamento estético próximo para garantir acabamento, equilíbrio e presença cênica.",
+  },
+];
+
+export const serviceItems: ServiceItem[] = [
+  {
+    slug: "decoracao-completa",
+    eyebrow: "Serviço 01",
+    title: "Decoração completa de eventos",
+    description:
+      "Projetos integrais para celebrações que pedem sofisticação visual, coesão estética e atmosfera memorável.",
+    bullets: [
+      "Conceito visual autoral para cerimônia e recepção",
+      "Curadoria floral, mobiliário e objetos de cena",
+      "Alinhamento completo com o estilo do anfitrião",
+    ],
+    imageSrc: "/media/service-completo.svg",
+    imageAlt:
+      "Arte abstrata elegante representando uma decoração completa com flores, iluminação e mobiliário.",
+  },
+  {
+    slug: "projetos-personalizados",
+    eyebrow: "Serviço 02",
+    title: "Projetos personalizados",
+    description:
+      "Criações sob medida para clientes que desejam identidade própria, sem fórmulas prontas e com acabamento de alto padrão.",
+    bullets: [
+      "Moodboards e definições cromáticas exclusivas",
+      "Adaptação ao porte, horário e linguagem do evento",
+      "Soluções desenhadas para espaços internos e externos",
+    ],
+    imageSrc: "/media/service-personalizado.svg",
+    imageAlt:
+      "Composição abstrata de um projeto personalizado com flores, esboços e paleta sofisticada.",
+  },
+  {
+    slug: "cenografia-ambientacao",
+    eyebrow: "Serviço 03",
+    title: "Cenografia e ambientação",
+    description:
+      "Criamos cenários que encantam no impacto visual e sustentam uma experiência fluida, acolhedora e fotogênica.",
+    bullets: [
+      "Pontos focais para entrada, altar, mesa posta e lounge",
+      "Iluminação cênica e composição de profundidade",
+      "Leitura espacial pensada para foto e permanência",
+    ],
+    imageSrc: "/media/service-cenografia.svg",
+    imageAlt:
+      "Arte abstrata com arcos dourados e iluminação cênica representando ambientação sofisticada.",
+  },
+  {
+    slug: "assessoria-estetica",
+    eyebrow: "Serviço 04",
+    title: "Assessoria estética",
+    description:
+      "Orientação curada para quem busca acertar escolhas visuais e elevar o nível estético do evento com segurança.",
+    bullets: [
+      "Harmonia entre flores, papelaria, mesa e cenário",
+      "Revisão estética de fornecedores e acabamentos",
+      "Diretrizes para uma apresentação visual consistente",
+    ],
+    imageSrc: "/media/service-assessoria.svg",
+    imageAlt:
+      "Ilustração abstrata sofisticada com detalhes dourados e florais representando consultoria estética.",
+  },
+];
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    slug: "floral-classico",
+    title: "Direção floral clássica em off-white",
+    category: "Casamentos",
+    description:
+      "Estudo visual para cerimônias que pedem imponência suave, flores claras e um percurso elegante de entrada ao altar.",
+    imageSrc: "/media/portfolio-floral.svg",
+    imageAlt:
+      "Estudo visual abstrato com flores claras e verde profundo, inspirado em cenários de casamento sofisticados.",
+    palette: ["#F6F1E8", "#D9C9AB", "#657258"],
+    note: "Moodboard conceitual. Acervo oficial em atualização.",
+  },
+  {
+    slug: "recepcao-dourada",
+    title: "Recepção dourada com luz cênica",
+    category: "Festas de luxo",
+    description:
+      "Proposta para mesas e ambientação com reflexos quentes, textura, brilho controlado e atmosfera envolvente.",
+    imageSrc: "/media/portfolio-dourado.svg",
+    imageAlt:
+      "Painel abstrato em dourado e verde oliva inspirado em recepções luxuosas e iluminação cênica.",
+    palette: ["#C5A46D", "#3F4B37", "#111111"],
+    note: "Moodboard conceitual. Acervo oficial em atualização.",
+  },
+  {
+    slug: "corporativo-botanico",
+    title: "Recepção corporativa com presença botânica",
+    category: "Eventos corporativos",
+    description:
+      "Linguagem premium para marcas que desejam acolher com elegância e reforçar posicionamento em cada detalhe.",
+    imageSrc: "/media/portfolio-corporativo.svg",
+    imageAlt:
+      "Composição abstrata com linhas arquitetônicas e vegetação, sugerindo evento corporativo sofisticado.",
+    palette: ["#3F4B37", "#A4AE9B", "#F6F1E8"],
+    note: "Moodboard conceitual. Acervo oficial em atualização.",
+  },
+  {
+    slug: "tematico-editorial",
+    title: "Narrativa temática de acabamento editorial",
+    category: "Decorações temáticas",
+    description:
+      "Direção criativa para festas autorais com cor, personalidade e cenas que funcionam como experiência e fotografia.",
+    imageSrc: "/media/portfolio-editorial.svg",
+    imageAlt:
+      "Arte abstrata com composição floral e formas geométricas inspirada em decoração temática refinada.",
+    palette: ["#6E5E48", "#D7B88B", "#F6F1E8"],
+    note: "Moodboard conceitual. Acervo oficial em atualização.",
+  },
+  {
+    slug: "altar-jardim",
+    title: "Jardim arquitetado para cerimônias intimistas",
+    category: "Casamentos",
+    description:
+      "Composição pensada para eventos menores, com profundidade, leveza e enquadramentos elegantes.",
+    imageSrc: "/media/portfolio-floral.svg",
+    imageAlt:
+      "Composição abstrata inspirada em cerimônia intimista com jardim elegante e flores claras.",
+    palette: ["#DDE0D4", "#657258", "#F6F1E8"],
+    note: "Moodboard conceitual. Acervo oficial em atualização.",
+  },
+  {
+    slug: "mesa-gala",
+    title: "Mesa de gala com brilho equilibrado",
+    category: "Festas de luxo",
+    description:
+      "Estudo de recepção pensado para banquetes e aniversários sofisticados com presença cenográfica marcante.",
+    imageSrc: "/media/portfolio-dourado.svg",
+    imageAlt:
+      "Composição abstrata inspirada em mesa de gala com tons dourados, preto e verde musgo.",
+    palette: ["#111111", "#C5A46D", "#657258"],
+    note: "Moodboard conceitual. Acervo oficial em atualização.",
+  },
+];
+
+export const differentials = [
+  "Projetos desenhados para eventos de alto padrão, sem soluções genéricas.",
+  "Leitura estética que une flor, luz, arquitetura e fotografia em uma mesma narrativa.",
+  "Atendimento próximo para clientes que valorizam exclusividade, bom gosto e acabamento impecável.",
+];
+
+export const testimonials: TestimonialItem[] = [
+  {
+    name: "Cliente reservado",
+    role: "Casamento",
+    quote:
+      "A experiência foi delicada, elegante e absolutamente impecável do conceito à montagem.",
+    eventType: "Casamento",
+  },
+  {
+    name: "Cliente reservado",
+    role: "Evento social",
+    quote:
+      "Cada detalhe parecia pensado para emocionar. O ambiente ficou exatamente como sonhamos.",
+    eventType: "Festa de luxo",
+  },
+  {
+    name: "Cliente reservado",
+    role: "Evento corporativo",
+    quote:
+      "Conseguimos transmitir sofisticação e identidade de marca em um cenário acolhedor e memorável.",
+    eventType: "Evento corporativo",
+  },
+];
