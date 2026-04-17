@@ -1,24 +1,34 @@
 # Le Jardin Eventos e Decorações
 
-Site institucional premium construído com `Next.js 16`, `React 19`, `TypeScript` e `Tailwind CSS 4`.
+Versão do site convertida para `PHP`, `HTML`, `CSS` e `JavaScript` leve, sem dependência de `Next.js` para renderização das páginas.
 
-## Scripts
+## Como rodar
 
-- `npm run dev`: inicia o ambiente local
-- `npm run build`: gera a versão de produção
-- `npm run start`: serve o build localmente
-- `npm run lint`: executa o ESLint
-- `npm run typecheck`: valida os tipos TypeScript
-- `npm run test:e2e`: executa os testes smoke com Playwright
+Use o servidor embutido do PHP na raiz do projeto:
 
-## Estrutura
+```bash
+php -S localhost:8000
+```
 
-- `src/app`: rotas principais do site
-- `src/components`: componentes compartilhados, layout, portfólio e formulário
-- `src/lib`: conteúdo tipado, SEO e utilitários de WhatsApp
-- `public/media`: placeholders editoriais para hero, serviços e portfólio
+Depois abra:
+
+- `http://localhost:8000/`
+- `http://localhost:8000/sobre/`
+- `http://localhost:8000/servicos/`
+- `http://localhost:8000/portfolio/`
+- `http://localhost:8000/contato/`
+
+## Estrutura nova
+
+- `index.php`: página inicial
+- `sobre/index.php`, `servicos/index.php`, `portfolio/index.php`, `contato/index.php`: rotas principais
+- `inc/`: dados do site, helpers, layout e SEO
+- `assets/css/site.css`: estilos globais
+- `assets/js/site.js`: menu mobile, animações, filtros do portfólio, lightbox e formulário
+- `media/`: imagens e artes do site
 
 ## Observações
 
-- O portfólio já está pronto para receber o acervo oficial, mas atualmente usa estudos visuais editoriais para não simular eventos reais.
-- O contato é centrado em `WhatsApp`, com formulário que gera uma mensagem pronta para atendimento.
+- O portfólio continua preparado para receber o acervo oficial da marca, usando estudos visuais editoriais enquanto isso.
+- O contato continua centrado em `WhatsApp`, agora com formulário HTML e JS leve gerando a mensagem automaticamente.
+- A base antiga em `Next.js` foi preservada no repositório como referência até uma limpeza final ser solicitada.
